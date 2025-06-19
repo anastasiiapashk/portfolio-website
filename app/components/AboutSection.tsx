@@ -3,6 +3,48 @@ import React, { useTransition, useState } from "react";
 import Image from "next/image";
 import TabButton from "./TabButton";
 
+const TAB_DATA = [
+  {
+    title: "Skills",
+    id: "skills",
+    content: (
+      <ul className="list-disc pl-2">
+        <li>Node.js</li>
+        <li>Express</li>
+        <li>PostgreSQL</li>
+        <li>JavaScript</li>
+        <li>React</li>
+        <li>Angular</li>
+      </ul>
+    ),
+  },
+  {
+    title: "Education",
+    id: "education",
+    content: (
+      <ul className="list-disc pl-2">
+        <li>NPower Canada</li>
+        <li>The Rolling Scopes School</li>
+        <li>
+          National Technical University of Ukraine 'Kyiv Polytechnic Institute'
+        </li>
+      </ul>
+    ),
+  },
+  {
+    title: "Certifications",
+    id: "certifications",
+    content: (
+      <ul className="list-disc pl-2">
+        <li>JavaScript / Front-end</li>
+        <li>IBM Data Analyst Professional Certificate</li>
+        <li>Microsoft Certified: Azure AI Fundamentals</li>
+        <li>Google Data Analytics Specialization</li>
+      </ul>
+    ),
+  },
+];
+
 const AboutSection = () => {
   const [tab, setTab] = useState("skills");
   const [isPending, startTransition] = useTransition();
@@ -47,11 +89,14 @@ const AboutSection = () => {
               Education
             </TabButton>
             <TabButton
-              selectTab={() => handleTabChange("experience")}
-              active={tab === "experience"}
+              selectTab={() => handleTabChange("certifications")}
+              active={tab === "certifications"}
             >
-              Experience
+              Certifications
             </TabButton>
+          </div>
+          <div className="mt-8">
+            {TAB_DATA.find((t) => t.id === tab).content}
           </div>
         </div>
       </div>
