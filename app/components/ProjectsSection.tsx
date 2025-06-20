@@ -65,8 +65,12 @@ const ProjectsSection = () => {
         My Projects
       </h2>
       <div className="text-white flex flex-row justify-center itens-center gap-2 py-6">
-        <button className="rounded-full border-2 border-purple-500 px-6 py-3 text-xl cursor-pointer">All</button>
-        <button className="rounded-full border-2 border-slate-600 hover:border-white px-6 py-3 text-xl cursor-pointer">Web</button>
+        <button className="rounded-full border-2 border-purple-500 px-6 py-3 text-xl cursor-pointer">
+          All
+        </button>
+        <button className="rounded-full border-2 border-slate-600 hover:border-white px-6 py-3 text-xl cursor-pointer">
+          Web
+        </button>
       </div>
       <div>
         {projectsData.map((project) => (
