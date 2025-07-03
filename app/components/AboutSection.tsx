@@ -50,7 +50,7 @@ const AboutSection = () => {
   const [tab, setTab] = useState("skills");
   const [, startTransition] = useTransition();
 
-  const handleTabChange = (id) => {
+  const handleTabChange = (id: string) => {
     startTransition(() => {
       setTab(id);
     });
