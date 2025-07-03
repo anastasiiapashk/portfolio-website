@@ -26,7 +26,8 @@ const TAB_DATA = [
         <li>NPower Canada</li>
         <li>The Rolling Scopes School</li>
         <li>
-          National Technical University of Ukraine 'Kyiv Polytechnic Institute'
+          National Technical University of Ukraine &apos;Kyiv Polytechnic
+          Institute&apos;
         </li>
       </ul>
     ),
@@ -47,7 +48,7 @@ const TAB_DATA = [
 
 const AboutSection = () => {
   const [tab, setTab] = useState("skills");
-  const [isPending, startTransition] = useTransition();
+  const [, startTransition] = useTransition();
 
   const handleTabChange = (id) => {
     startTransition(() => {
